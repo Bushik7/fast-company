@@ -11,7 +11,7 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
             onSort({ path: item, order: "asc" });
         }
     };
-    const renderSortArrow = (selectedSort, currentPath) => {
+    const rendeSortArrow = (selectedSort, currentPath) => {
         if (selectedSort.path === currentPath) {
             if (selectedSort.order === "asc") {
                 return <i className="bi bi-caret-down-fill"></i>;
@@ -37,7 +37,7 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
                         scope="col"
                     >
                         {columns[column].name}{" "}
-                        {renderSortArrow(selectedSort, columns[column].path)}
+                        {rendeSortArrow(selectedSort, columns[column].path)}
                     </th>
                 ))}
             </tr>
